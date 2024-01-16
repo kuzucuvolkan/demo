@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: vmindtech/demo:0.1
+        image: kuzucuvolkan/demo:0.1
         ports:
       - containerPort: 80
       
