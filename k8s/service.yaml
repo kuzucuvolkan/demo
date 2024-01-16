@@ -1,21 +1,12 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service
 metadata:
-  name: myapp-deployment
-  labels:
-    app: myapp
+  name: myapp-service
 spec:
-  replicas: 3
+  type: ClusterIP
   selector:
-    matchLabels:
-      app: myapp
-  template:
-    metadata:
-      labels:
-        app: myapp
-    spec:
-      containers:
-      - name: myapp
-        image: kuzucuvolkan/demo:0.1
-        ports:
-        - containerPort: 80
+    app: myapp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
